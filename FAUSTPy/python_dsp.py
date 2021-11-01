@@ -1,4 +1,4 @@
-from numpy import atleast_2d, ndarray, float32, float64, float128
+from numpy import atleast_2d, ndarray, float32, float64
 
 
 class PythonDSP(object):
@@ -42,6 +42,7 @@ class PythonDSP(object):
         elif self.__faust_float == "double":
             self.__dtype = float64
         elif self.__faust_float == "long double":
+            from numpy import float128
             self.__dtype = float128
 
         # calls both classInitmydsp() and instanceInitmydsp()
