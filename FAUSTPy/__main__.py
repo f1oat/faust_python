@@ -34,6 +34,10 @@ args = parser.parse_args()
 
 wrapper.FAUST_PATH = args.faust_path
 
+import os
+os.chdir('faust_python')
+print("PYTHONPATH=", os.environ["PYTHONPATH"])
+
 dattorro = FAUST("dattorro_notch_cut_regalia.dsp", args.fs, args.faustfloat,
                  extra_compile_args=args.cflags)
 
